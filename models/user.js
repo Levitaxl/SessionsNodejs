@@ -4,10 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    aboutMe: DataTypes.TEXT,
+    residence: DataTypes.STRING,
+    web: DataTypes.STRING,
+    rol: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    // associations can be defined here
+    User.hasOne(models.developer, { foreignKey: 'userId' });
   };
   return User;
 };

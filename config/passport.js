@@ -8,6 +8,7 @@ module.exports = function(passport) {
       db.User.findOne({
          where: {email: email} 
       }).then(user => {
+        console.log(user.id);
         if (!user) {
           return done(null, false, console.log('That email is not registered') );
         }
@@ -16,7 +17,6 @@ module.exports = function(passport) {
           if (isMatch) return done(null, user);
           else return done(null, false, console.log('Password incorrect'));
         });
-        //return done(null, user);
       });
     })
   )
@@ -29,7 +29,6 @@ module.exports = function(passport) {
     db.User.findOne({
       where:{id: id}
     }).then(user=>{
-      console.log(user);
       return done(null, user);
     })
   

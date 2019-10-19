@@ -3,7 +3,7 @@ module.exports = {
       if (req.isAuthenticated()) {
         return next();
       }
-      console.log('mano, revisa que estes conectado');
+      console.log('revise que este autenticado');
       res.redirect('/login');
     },
     forwardAuthenticated: function(req, res, next) {

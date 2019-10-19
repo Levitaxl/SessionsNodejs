@@ -29,14 +29,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-
-//middelwares
-
-//app.use(morgan('dev'));
-
-//empezando el servidor
-
 customerRoutes(app);
 
 db.sequelize.sync().then(function (){
